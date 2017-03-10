@@ -7,3 +7,4 @@
     Custom
  */
 //= partials/helper.js
+//= partials/burger-menu.js

@@ -1,25 +1,66 @@
+/* Header */
+.header {
+	.clearfix;
+	background: #f4f5fc;
+	position: relative;
+
+
+	@media @mobile {
+    	padding: 20px;
+    }
+}
+
+/* Navigation */
 .navigation {
 	.inline-block-space-parent;
+	/* removes space between inline elements */
 	text-align: center;
 	padding: 40px 20px;
+
+	@media @mobile {
+		padding: 0;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #f4f5fc;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height ease 1s;
+		border-bottom: solid 1px #87ceb5;
+	}
+
+	&.active {
+		max-height: 1000px;
+	}
 	
-	li {
+	a {
 		.inline-block-space-child;
-		padding: 0 40px;
+		/* remove space between inline elements */
+		margin: 0 40px;
 		position: relative;
 		vertical-align: middle;
 		font-size: 13px;
+		color: #4d4959;
+		text-decoration: none;
 
-		a {
-			color: #4d4959;
-			text-decoration: none;
+		@media @mobile {
+			display: block;
+			margin: 0;
+			padding: 10px;
+		}
 
-			&:hover {
-				color: #87ceb5;
+		&:last-child {
+
+			@media @mobile {;
+				padding: 10px 0 20px;
 			}
 		}
 
-		&:after, 
+		&:hover {
+			color: #87ceb5;
+		}
+	 
 		&:before {
 			content: '';
 			height: 1px;
@@ -28,44 +69,82 @@
 			background: #4d4959;
 			position: absolute;
 			bottom: 3px;
-		}
-
-		&:after {
-			right: 0;
-			transform: translateX(50%);
-		}
-
-		&:before {
-			left: 0;
+			left: -40px;
 			transform: translateX(-50%);
+
+			@media @mobile {
+				display: none;
+			}
 		}
 
 		&.logo {
-			&:after, 
-			&:before {
-				top: 0;
-				bottom: 0;
-				width: 6px;
-				height: 100%;
-				background: #fff;
-				z-index: 2;
+
+			@media @mobile {
+				display: none;
 			}
 		}
 
-		&:first-child {
+		&:first-child,
+		&.logo,
+		&.logo + a {
 			&:before {
-				width: 6px;
-				background: #fff;
-				z-index: 2;
+				display: none;
 			}
-		}
+		} /* remove dot from the first, last, and after-logo links */
+	}
+}
 
-		&:last-child {
-			&:after {
-				width: 6px;
-				background: #fff;
-				z-index: 2;
-			}
-		}
+/* Mobile Logo */
+.mobile-logo {
+	float: left;
+	display: none;
+	max-width: 50px;
+
+	@media @mobile {
+   		display: block;
+    }
+
+    .logo {
+    	display: block;
+    }
+}
+
+/* Burger Menu */
+.burger-menu {
+	cursor: pointer;
+	display: none;
+	float: right;
+
+	@media @mobile {
+    	display: block;
+    }
+
+    .line-1, 
+	.line-2, 
+	.line-3 {
+		width: 35px;
+		height: 5px;
+		background-color: #87ceb5;
+		margin: 6px 0;
+		transition: 0.4s;
+	}
+}
+
+/* Burger Menu Animation */
+.change {
+
+	/* rotate first bar */
+	.line-1 {
+	    transform: rotate(-45deg) translate(-9px, 6px) ;
+	}
+
+	/* fade out the second bar */
+	.line-2 {
+		opacity: 0;
+	}
+
+	/* rotate last bar */
+	.line-3 {
+		transform: rotate(45deg) translate(-8px, -8px);
 	}
 }
