@@ -1,5 +1,68 @@
+/* Main Promo */
 .main-promo {
 	min-height: 600px;
 	background: url('../img/main-promo-img.jpg') top center;
 	background-size: cover;
+
+	@media @mobile {
+    	min-height: 300px;
+    }
+}
+
+/* Main Message */
+.main-message {
+	text-align: center;
+	padding: 40px 20px;
+	background: #f7f7f7;
+
+	.text-box {
+		max-width: 1080px;
+		margin: 0 auto;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+}
+
+/* Icon Title */
+.icon-title-box {
+	text-align: center;
+	margin: 0 0 25px;
+
+	img {
+
+	}
+}		
+
+/* Title */
+.title-box {
+	margin: 0 0 25px;
+	color: #353738;
+}
+
+/* Text */
+.text-box {
+	color: #848789;
+}
+
+/* Shop Button */
+.shop-button {
+	background: #282f35;
+	padding: 40px 20px;
+	text-align: center;
+
+	a {
+		display: inline-block;
+		padding: 10px 25px;
+		color: #fff;
+		border: solid 1px #fff;
+		font-size: 13px;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: all ease .5s;
+
+		&:hover {
+			background: #fff;
+			color: #282f35;
+		}
+	}
 }
