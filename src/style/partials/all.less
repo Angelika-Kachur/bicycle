@@ -44,6 +44,115 @@
 	color: #848789;
 }
 
+
+/* Bike Info */
+.bike-info-section {
+
+    .bg-img {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+    	min-width: 100%;
+    	min-height: 100%;
+    }
+
+    .logo-img {
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    	z-index: 2;
+    }
+
+    .info {
+    	padding: 35px 10px;
+
+    	.icon {
+    		margin: 0 0 10px;
+    	}
+
+    	.title {
+    		font-size: 18px;
+    		color: #353738;
+    	}
+
+    	.text {
+    		color: #848789;
+    		font-size: 16px;
+    		line-height: 1.5;
+    		position: relative;
+    		padding: 0 0 30px;
+
+    		&:after {
+    			content: '';
+    			position: absolute;
+    			top: 100%;
+    			left: 50%;
+    			transform: translateX(-50%);
+    			height: 1px;
+    			width: 50px;
+    			background: #f2f2f2;
+
+    		}
+    	}
+    }
+
+    .image-box {
+    	position: absolute;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+    	height: 200px;
+
+    	&:before {
+    		content: '';
+    		position: absolute;
+    		top: 0;
+    		left: 50%;
+    		transform: translateX(-50%);
+    		border: solid 10px transparent;
+    		border-top: solid 10px #fff;
+    		z-index: 2;
+    	}
+
+    	img {
+    		position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+    	}
+    }
+}
+
+.bike-info-row {
+	display: table;
+    width: 100%;
+}
+
+.bike-info-col {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0 0 200px;
+	/* the same is height image-box */
+    position: relative;
+    overflow: hidden;
+}
+
+.bike-info-col-1 {
+	width: 33.3%;
+}
+
+.bike-info-col-2 {
+	width: 66.6%;
+}
+
+
 /* Slider Section */
 .slider-section {
 	margin: 100px 20px 110px;
